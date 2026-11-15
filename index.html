@@ -179,6 +179,7 @@ window.onload = () => {
 
     function spawnCurrentFruit() {
         const fruitData = FRUITS[nextFruitIndex];
+        mouseX = Math.max(fruitData.radius, Math.min(GAME_WIDTH - fruitData.radius, mouseX));
         // Create a static body at the top for aiming
         currentFruit = Bodies.circle(mouseX, 40, fruitData.radius, {
             isStatic: true,
